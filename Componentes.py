@@ -269,4 +269,31 @@ class Tabs:
         self.page.add(t)
 
 
-ft.app(target=Tabs)
+class Basics:
+    def __init__(self, page: ft.Page):
+        self.page = page
+
+        self.page.add(
+            ft.Text(value="Text"),
+            ft.Divider(),
+            ft.Image(src="images/negao.png", width=100, height=100),
+            ft.Divider(),
+            ft.Icon(name=ft.icons.BOLT_SHARP, size=50, tooltip="icone"),
+            ft.Divider(),
+            ft.ElevatedButton(text="ElevatedButton"),
+            ft.FilledButton(text="FilledButton"),
+            ft.FilledTonalButton(text="FilledTonalButton"),
+            ft.FloatingActionButton(icon=ft.icons.ADD),
+            ft.Divider(),
+            ft.IconButton(icon=ft.icons.PEOPLE_OUTLINE_OUTLINED),
+            ft.Divider(),
+            ft.PopupMenuButton(
+                items=[ft.PopupMenuItem("item 1"), ft.PopupMenuItem("item2")]
+            ),
+            ft.Divider(),
+            ft.TextButton(text="TextButton"),
+            ft.Divider(),
+        )
+
+
+ft.app(target=Basics, assets_dir="assets")
